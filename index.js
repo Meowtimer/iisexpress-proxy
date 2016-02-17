@@ -53,7 +53,8 @@ Object.keys(interfaces).forEach(function(name) {
 
 proxy.createProxyServer({
   target: protocolPrefix + host + ':' + port,
-  changeOrigin: true
+  changeOrigin: true,
+  ws: true
 }).listen(proxyPort, function() {
   console.log('Listening... [press Control-C to exit]');
 }).on('error', function (err, req, res) {
